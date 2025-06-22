@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lets Go - Registration & OTP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Lets Go - Registration</h2>
+
+        <form id="registrationForm" class="active-form">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email ID" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Mobile Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
+            </div>
+            <div class="form-group">
+                <label for="referralCode">Referral Code (if any)</label>
+                <input type="text" id="referralCode" name="referralCode" placeholder="Enter your referral code (optional)">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" required>
+            </div>
+            <button type="submit" class="btn-submit">Register & Get OTP</button>
+            <p class="text-center">Already have an account? <a href="#">Log In</a></p>
+        </form>
+
+        <form id="otpForm" class="hidden-form">
+            <h3>Verify OTP</h3>
+            <p id="otpMessage" class="text-center"></p>
+            <div class="form-group">
+                <label for="otp">Enter OTP</label>
+                <input type="text" id="otp" name="otp" placeholder="Enter the 6-digit OTP" maxlength="6" required>
+            </div>
+            <button type="submit" class="btn-submit">Verify OTP</button>
+            <p class="text-center"><a href="#" id="resendOtpLink">Resend OTP</a></p>
+        </form>
+
+        <div id="successMessage" class="hidden-form text-center">
+            <h3>Registration Successful!</h3>
+            <p>Your unique ID and password have been generated:</p>
+            <p><strong>Your ID:</strong> <span id="generatedId"></span></p>
+            <p><strong>Your Password:</strong> <span id="generatedPass"></span></p>
+            <p>Please save these credentials securely.</p>
+            <button type="button" class="btn-submit" onclick="window.location.reload()">Start Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
